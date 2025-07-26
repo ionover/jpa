@@ -25,7 +25,7 @@ public class PersonController {
     public ResponseEntity<Person> findById(@PathVariable Long id) {
         Optional<Person> person = personService.findById(id);
         return person.map(ResponseEntity::ok)
-                    .orElse(ResponseEntity.notFound().build());
+                     .orElse(ResponseEntity.notFound().build());
     }
 
     @PostMapping
@@ -65,7 +65,7 @@ public class PersonController {
     public ResponseEntity<Person> findByNameAndSurname(@RequestParam String name, @RequestParam String surname) {
         Optional<Person> person = personService.findByNameAndSurname(name, surname);
         return person.map(ResponseEntity::ok)
-                    .orElse(ResponseEntity.notFound().build());
+                     .orElse(ResponseEntity.notFound().build());
     }
 
     @GetMapping("/by-age")

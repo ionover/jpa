@@ -2,8 +2,6 @@ package com.example.orm.repositories;
 
 import com.example.orm.entitys.Person;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -19,8 +17,8 @@ public interface PersonRepository extends JpaRepository<Person, Long> {
     Optional<Person> findByNameAndSurname(String name, String surname);
 
     List<Person> findByAge(int age);
-    
+
     List<Person> findByNameContainingIgnoreCase(String name);
-    
+
     List<Person> findBySurnameContainingIgnoreCase(String surname);
 }

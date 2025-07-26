@@ -25,7 +25,7 @@ public class CityController {
     public ResponseEntity<City> findById(@PathVariable Long id) {
         Optional<City> city = repository.findById(id);
         return city.map(ResponseEntity::ok)
-                  .orElse(ResponseEntity.notFound().build());
+                   .orElse(ResponseEntity.notFound().build());
     }
 
     @PostMapping
@@ -55,7 +55,7 @@ public class CityController {
     public ResponseEntity<City> findByName(@RequestParam String name) {
         Optional<City> city = repository.findByName(name);
         return city.map(ResponseEntity::ok)
-                  .orElse(ResponseEntity.notFound().build());
+                   .orElse(ResponseEntity.notFound().build());
     }
 
     @GetMapping("/search")
