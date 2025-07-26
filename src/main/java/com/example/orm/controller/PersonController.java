@@ -16,7 +16,6 @@ public class PersonController {
 
     private final PersonService personService;
 
-    // CRUD операции
     @GetMapping
     public List<Person> findAll() {
         return personService.findAll();
@@ -52,7 +51,6 @@ public class PersonController {
         return ResponseEntity.noContent().build();
     }
 
-    // Специальные методы поиска
     @GetMapping("/by-city")
     public List<Person> findByCity(@RequestParam String city) {
         return personService.findByCity(city);
@@ -70,7 +68,6 @@ public class PersonController {
                     .orElse(ResponseEntity.notFound().build());
     }
 
-    // Дополнительные методы поиска
     @GetMapping("/by-age")
     public List<Person> findByAge(@RequestParam int age) {
         return personService.findByAge(age);

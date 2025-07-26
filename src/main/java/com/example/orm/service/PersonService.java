@@ -38,7 +38,6 @@ public class PersonService {
         return personRepository.existsById(id);
     }
 
-    // Специальные методы поиска
     public List<Person> findByCity(String cityName) {
         return personRepository.findByCityName(cityName);
     }
